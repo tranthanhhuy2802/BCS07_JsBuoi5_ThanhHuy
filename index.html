@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+</head>
+<div class="container-sm">
+    <h1> Bài 1 Quản Lý Tuyển Sinh</h1>
+    <div class="row">
+        <div class="mb-3 col-3">
+            <input type="text" class="form-control" name="" id="diemChuan" placeholder="Điểm Chuẩn">
+        </div>
+        <div class="col-3">
+            <select class="mb-3 w-100 h-75 rounded" name="" id="chonKhuVuc">
+                <option value="">Chọn Khu Vực</option>
+                <option value="a">A</option>
+                <option value="b">B</option>
+                <option value="c">C</option>
+            </select>
+        </div>
+        <div class="col-3">
+            <select class="mb-3 w-100 h-75 rounded" name="" id="chonDoiTuong">
+                <option value="">Chọn đối tượng</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="mb-3 col-3">
+            <input type="text" class="form-control" name="" id="diemMon1" placeholder="Điểm Môn 1">
+        </div>
+        <div class="mb-3 col-3">
+            <input type="text" class="form-control" name="" id="diemMon2" placeholder="Điểm Môn 2">
+        </div>
+        <div class="mb-3 col-3">
+            <input type="text" class="form-control" name="" id="diemMon3" placeholder="Điểm Môn 3">
+        </div>
+    </div>
+    <button class="btn btn-success mb-3 rounded px-5 py-2" onclick="quanLiTuyenSinh()">Kết Quả</button>
+    <div class="bg-success rounded  py-4 w-75" id="hienKetQua"></div>
+</div>
+
+
+<div class="container-sm mt-5">
+    <h1>Bài 2 Tính Tiền Điện</h1>
+    <div class="d-flex">
+        <div class="mb-3">
+            <input type="text" class="form-control" name="" id="hoTen" placeholder="Họ và Tên">
+        </div>
+        <div class="mb-3 ms-3">
+            <input type="text" class="form-control" name="" id="soKw" placeholder="Nhập số Kw">
+        </div>
+    </div>
+    <button class="btn btn-success mb-3 rounded px-5 py-2" onclick="tinhTienDien()" id="but1">Tính Tiền Điện</button>
+    <div class="bg-success rounded  py-4 w-75" id="hienKetQua1"></div>
+</div>
+
+<div class="container-sm mt-5">
+    <h1>Bài 3 Tính Thuế Thu Nhập Cá Nhân</h1>
+    <div class="d-flex">
+        <div class="mb-3">
+            <input type="text" class="form-control" name="" id="hoTen1" placeholder="Họ và Tên">
+        </div>
+        <div class="mb-3 ms-3">
+            <input type="number" class="form-control" name="" id="tongThuNhapNam" placeholder="Tổng thu nhập Năm">
+        </div>
+        <div class="mb-3 ms-3">
+            <input type="text" class="form-control" name="" id="soNguoiPhuThuoc" placeholder="Số người phụ thuộc">
+        </div>
+    </div>
+    <button class="btn btn-success mb-3 rounded px-5 py-2" onclick="tinhThue()" id="but1">Tính Tiền Thuế</button>
+    <div class="bg-success rounded  py-4 w-75" id="hienKetQua3"></div>
+</div>
+
+<div class="container-sm mt-5">
+    <h1>Bài 4 Tính Tiền Cáp</h1>
+    <div class="d-flex">
+        <div class="">
+            <select class="mb-3 h-75  px-5 rounded" name="" id="chonKhuVuc1" onchange="anHien()">
+                <option value="">Chọn Khu Vực</option>
+                <option value="nhadan">Nhà Dân</option>
+                <option value="doanhnghiep">Doanh Nghiệp</option>
+            </select>
+        </div>
+        <div class="mb-3 ms-3">
+            <input type="text" class="form-control" name="" id="maKhachHang" placeholder="Mã Khách Hàng">
+        </div>
+        <div class="mb-3 ms-3">
+            <input type="text" class="form-control" name="" id="kenhCaoCap" placeholder="Số Kênh Cao Cấp">
+        </div>
+    </div>
+    <div id="input" style="display: none;">
+        <input class="px-3 py-1 rounded" type="text" name="" id="soKetNoi" placeholder="số kết nối">
+    </div>
+
+    <button class="btn btn-success mb-3 rounded px-5 py-2 mt-3" id="but1">Tính Tiền Thuế</button>
+    <div class="bg-success rounded  py-4 w-75" id="hienKetQua1"></div>
+</div>
+
+<body>
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+        </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+        </script>
+    <script>function anHien() {
+            var x = document.getElementById("chonKhuVuc1").value;
+            if (x == "doanhnghiep") {
+                document.getElementById("input").style.display = 'block'
+            } else document.getElementById("input").style.display = 'none'
+
+        }</script>
+    <script src="./index.js">
+    </script>
+
+</body>
+
+</html>
